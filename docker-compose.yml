@@ -1,0 +1,40 @@
+version: "3"
+
+services:
+
+  web:
+    build: .
+    container_name: web
+    ports:
+      - 5000:5000
+    volumes:
+      - .:/code
+    environment:
+      FLASK_DEBUG: "True"
+
+  #redis:
+  #  image: redis:latest
+  #  container_name: redis
+  
+#  postgres:
+#    image: postgres:13.3
+#    environment:
+#      POSTGRES_DB: "market"
+#      POSTGRES_USER: "admin"
+#      POSTGRES_PASSWORD: "admin"
+      #PGDATA: "/var/lib/postgresql/data/pgdata"
+#      PGDATA: "/var/lib/postgresql:Z"
+#    volumes:
+#      - ./Init Database:/docker-entrypoint-initdb.d
+      #- .:/var/lib/postgresql/data
+      #- pgdata:/var/lib/postgresql:Z
+#      - .:/var/lib/postgresql:Z
+#    ports:
+#      - 5433:5432
+
+#volumes:
+#  pgdata:
+#    external: true
+
+
+
