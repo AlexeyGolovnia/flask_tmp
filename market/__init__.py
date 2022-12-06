@@ -5,7 +5,7 @@ from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres@host.docker.internal:5432/market'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@host.docker.internal:5433/market'
 app.config['SECRET_KEY'] = '933a8266efc1bb729e490bdb'
 db = SQLAlchemy(app)
 
